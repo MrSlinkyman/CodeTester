@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans SYSTEM "http://static.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+   <!-- 
+      Bean used to read from the System.properties 
+      To access a property just use the ${variableName}
+      where the variableName is the name of the property that you are
+      looking for.  See below ${jndi.location}
+      
+      NOTE: a property file can also be read by the bean below
+      then you can specify to read from the property file first
+      or System properties
+   -->
+   <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"></bean>
+
+   <!--
+      Abstract JNDI factory bean which also defines the Properties used to hold the JNDI environment information
+      If needed or desired all values could come the system properties
+      right now it is ony the provider url ${jndi.location}
+  
+   <bean id="templateJndiFactoryBean" class="org.springframework.jndi.JndiObjectFactoryBean" abstract="true">
+      <property name="jndiEnvironment">
+         <props>
+            <prop key="java.naming.factory.initial">org.jnp.interfaces.NamingContextFactory</prop>
+            <prop key="java.naming.factory.url.pkgs">org.jboss.naming:org.jnp.interfaces</prop>
+            <prop key="java.naming.provider.url">${jndi.location}</prop>
+         </props>
+      </property>
+   </bean>
+         <bean id="jndiUrl" parent="templateJndiFactoryBean">
+            <property name="jndiName" value="my/jndi/location/name" />
+         </bean>
+   -->
+   <bean id="genericHttpInvocationObject" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+      <property name="serviceUrl" value="http://myserver:8080/warContext/httpinvocation/DoStuffService"/>
+      <property name="serviceInterface" value="com.hernandez.rey.spring.DoStuff" /> 
+   </bean>
+
+</beans>
