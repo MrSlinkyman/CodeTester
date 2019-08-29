@@ -11,7 +11,7 @@ import org.junit.Test;
 public class PrimitivesTest {
 
 	private static final String PRINT_FORMAT = "%1$016x %1$20d\n";
-	private static final String HEX_FORMAT = "%016x";
+//	private static final String HEX_FORMAT = "%016x";
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {

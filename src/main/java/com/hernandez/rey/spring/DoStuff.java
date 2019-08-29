@@ -1,6 +1,3 @@
-/*
- * Copyright © 2000 - 2008 Sony Network Entertainment. All rights reserved.
- */
 package com.hernandez.rey.spring;
 
 

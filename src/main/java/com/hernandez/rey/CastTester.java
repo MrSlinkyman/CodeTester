@@ -1,6 +1,3 @@
-/*
- * Copyright © 2000 - 2008 Sony Network Entertainment. All rights reserved.
- */
 package com.hernandez.rey;
 
 
@@ -78,8 +75,8 @@ public class CastTester
 	public void testInstanceOf()
 	{
 		final Integer x = 3;
-		final int y = 4;
-		final Object xObject = x;
+//		final int y = 4;
+//		final Object xObject = x;
 
 		assertTrue("Should be instanceof Integer", x instanceof Integer);
 		log.info(x.getClass());
@@ -96,7 +93,7 @@ public class CastTester
 		map.put("Integer", 3);
 		map.put("Long", 5l);
 		map.put("Byte", (byte) 3);
-		map.put("List", new ArrayList<>(Arrays.asList(new Object[] { new Object(), new String("1") })));
+		map.put("List", new ArrayList<Object>(Arrays.asList(new Object[] { new Object(), new String("1") })));
 		
 		for (Entry<String, Serializable> x : map.entrySet()) {
 			log.info("Key:" + x.getKey() + ", value:" + x.getValue() + ":" + x.getValue().getClass());

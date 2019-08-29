@@ -62,7 +62,7 @@ public class StringTest
 		while ((st < len) && (val[len - 1] <= ' ')) {
 			len--;
 		}
-		String strReturn = ((st > 0) || (len < value.length())) ? value.substring(st, len) : value;
+		assertEquals("The value is different",((st > 0) || (len < value.length())) ? value.substring(st, len) : value,value);
 
 	}
 

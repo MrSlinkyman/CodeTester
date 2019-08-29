@@ -1,6 +1,3 @@
-/*
- * Copyright © 2000 - 2008 Sony Network Entertainment. All rights reserved.
- */
 package com.hernandez.rey.crypto;
 
 
@@ -68,7 +65,7 @@ public class TripleDES
             // in the $JAVA_HOME/jre/lib/security/java.security file.
             // Therefore, we have to install the JCE provider explicitly.
             System.err.println ("Installing SunJCE provider.");
-            @SuppressWarnings("restriction")
+//            @SuppressWarnings("restriction")
 			final Provider sunjce = new com.sun.crypto.provider.SunJCE ();
             Security.addProvider (sunjce);
          }
